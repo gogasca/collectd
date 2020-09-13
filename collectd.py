@@ -5,7 +5,10 @@ import struct
 import logging
 import traceback
 from functools import wraps
-from Queue import Queue, Empty
+try:
+   from Queue import Queue, Empty
+except ImportError:
+   from queue import Queue, Empty
 from collections import defaultdict
 from threading import RLock, Thread, Semaphore
 
